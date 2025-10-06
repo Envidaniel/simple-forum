@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forum</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <h1>Mini Forum</h1>
+  <form action="/post" method="POST">
+    <input type="text" name="author" placeholder="Ton nom" required>
+    <textarea name="text" placeholder="Ton message" required></textarea>
+    <button type="submit">Poster</button>
+  </form>
+  <h2>Messages :</h2>
+  <ul>
+    <% messages.forEach(msg => { %>
+      <li><strong><%= msg.author %> (<%= msg.date %>):</strong> <%= msg.text %></li>
+    <% }); %>
+  </ul>
+</body>
+</html>
